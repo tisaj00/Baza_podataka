@@ -11,7 +11,7 @@ CREATE TABLE salon(
 
 CREATE TABLE djelatnik(
 	Sifra 		int,
-	ime			varchar(50),
+	ime		varchar(50),
 	oib 		char(11),
 	spol		boolean,
 	salon		int,
@@ -20,7 +20,7 @@ CREATE TABLE djelatnik(
 
 CREATE TABLE korisnik(
 	Sifra 		int,
-	ime			varchar(50),
+	ime		varchar(50),
 	oib 		char(11),
 	prezime		varchar(50)
 );
