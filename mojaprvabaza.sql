@@ -26,7 +26,7 @@ CREATE TABLE korisnik(
 
 CREATE TABLE posjet(
 	sifra 		int not null primary key auto_increment,
-	datum		datetime,
+	datum		datetime not null,
 	korisnik 	int not null
 );
 
@@ -58,4 +58,10 @@ alter table posjet_usluga add foreign key (posjet) references posjet(sifra);
 alter table posjet_usluga add foreign key (usluga) references usluga(sifra);
 
 
-
+insert into salon (sifra,naziv,lokacija) values (null,'frizerski salon Ksenija','Beli Manastir'), (null,'frizerski salon mali repić','Osijek');
+insert into djelatnik (sifra,ime,spol,salon) values (null,'Josip',true,1),(null,'Andrea',false,2);
+insert into korisnik (sifra,ime,prezime) values (null,'Maja','Ilic'),(null,'Andrej','Juric'),(null,'Iva','Ivici');
+insert into posjet (sifra,datum,korisnik) values (null,'2018-10-29',1),(null,'2018-10-30',2),(null,'2018-10-21',3);
+insert into usluga(sifra,cijena) values (null,59),(null,129),(null,79);
+insert into posjet_djelatnik (posjet,djelatnik) values (1,2),(2,1),(3,2);
+insert into posjet_usluga (posjet,usluga) values (1,2),(3,3),(2,1);
